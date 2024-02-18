@@ -8,11 +8,9 @@ const StudentList = ({students})=>{
             name={st.name}
             father={st.father}
             email={st.email}
-            password={st.password}
-            address={st.address}
             city={st.city}
             state={st.state}
-            zipcode={st.zipCode}
+            zipcode={st.zipcode}
             ></Student>
             ))}
     </>);

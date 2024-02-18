@@ -50,7 +50,7 @@ const NewStudent=()=>{
   }
 
   return (<>
-    <center><h2 className='heading'>Student Portal</h2></center>
+    <center><h2 className='heading'>Register New Student</h2></center>
     <Form className='container' onSubmit={submitStudentInfo}>
       <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridName">
@@ -95,7 +95,6 @@ const NewStudent=()=>{
           <Form.Control type='number' ref={zipCode} placeholder='110025'/>
         </Form.Group>
       </Row>
-
       <Button variant="primary" type="submit">
         Submit
       </Button>

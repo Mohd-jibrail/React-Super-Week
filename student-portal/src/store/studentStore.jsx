@@ -2,15 +2,16 @@ import { useReducer } from "react";
 import { createContext } from "react";
 
 export const StudentPortalDBContext = createContext({
-    studentDb: [],
+    studentList: [],
     addNewStudent: () => {},
     deleteStudent: () => {},
 });
 
 const StudentDbReducer = (studentCurrentDb, action)=>{
-    let newStudents = studentCurrentDb;
+    let newStudentDb = studentCurrentDb;
+
     if(action.type === "NEW_STUDENT"){
-        newStudents =[
+      newStudentDb =[
             ...studentCurrentDb,
             {
                 name: action.payload.name,
@@ -20,50 +21,44 @@ const StudentDbReducer = (studentCurrentDb, action)=>{
                 address: action.payload.address,
                 city: action.payload.city,
                 state: action.payload.state,
-                zipcode: action.payload.zipcode
-            
+                zipcode: action.payload.zipcode,
+                image: action.payload.image
             },
         ];
     }else if(action.type==="DELETE_STUDENT"){
-        newStudents = studentCurrentDb.filter(
-            (student)=> student.email !==action.payload.email
+        newStudentDb = studentCurrentDb.filter(
+            (student) => student.email !==action.payload.email
         );
     }
-    return newStudents;
+    return newStudentDb;
 };
+
 const StudentPortalContextProvider = ({children}) => {
-    const [studentDb,dispatchStudents] = useReducer(StudentDbReducer,[]);
+
+    const [studentList,dispatchStudents] = useReducer(StudentDbReducer,[]);
 
     const addNewStudent = (name, father, email, passwrod, address, city, state, zipcode) => {
         const newStudentAction = {
             type : "NEW_STUDENT",
-            payload:{
-                name,
-                father,
-                email,
-                passwrod,
-                address,
-                city,
-                state,
-                zipcode
-            },
+            payload:{ name, father, email, passwrod, address, city, state, zipcode },
         };
         dispatchStudents(newStudentAction);
     };
-    const deleteStudent = (name) => {
-        const deleteItemAction = {
-          type: "DELETE_ITEM",
+
+    const deleteStudent = (email) => {
+        const deleteStudentAction = {
+          type: "DELETE_STUDENT",
           payload: {
-            name: name,
+            email: email,
           },
         };
-        dispatchStudents(deleteItemAction);
+        dispatchStudents(deleteStudentAction);
       };
 
       return (
         <StudentPortalDBContext.Provider
           value={{
-            studentDb,
+            studentList,
             addNewStudent,
             deleteStudent,
           }}

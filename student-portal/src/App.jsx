@@ -10,8 +10,8 @@ function App() {
   return (
     
       <StudentPortalContextProvider>
-        <Header></Header>
         <BrowserRouter>
+         <Header></Header>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/student" element={<Student />} />

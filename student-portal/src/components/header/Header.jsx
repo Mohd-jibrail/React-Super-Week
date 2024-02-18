@@ -1,23 +1,20 @@
 import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import './header.css'
+
 
 function Header() {
+  const navigate = useNavigate();
   return (
     <Navbar className="bg-primary justify-content-between">
       <Form inline>
-        <InputGroup>
-          <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-          <Form.Control
-            placeholder="Username"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-          />
-        </InputGroup>
+        <Col xs="auto" >
+            <Button  className='bg-success' onClick={()=>navigate("/newStudent")}>Student<b>+</b></Button>
+        </Col>
       </Form>
       <Form inline>
         <Row>
@@ -28,8 +25,8 @@ function Header() {
               className=" mr-sm-2"
             />
           </Col>
-          <Col xs="auto">
-            <Button type="submit">Submit</Button>
+          <Col xs="auto" >
+            <Button type="submit" className='bg-danger searchBtn'>Submit</Button>
           </Col>
         </Row>
       </Form>
