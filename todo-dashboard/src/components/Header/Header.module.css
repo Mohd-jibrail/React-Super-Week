@@ -1,0 +1,25 @@
+.inputHeader{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 30px;
+    background-color: rgb(77, 72, 117);
+}
+.inputField{
+    height: 30px;
+    width: 200px;
+    border-radius: 5px;
+    border: none;
+}
+.inputField:focus{
+    background-color: aqua;
+}
+.addButton{
+    height: 35px;
+    width: 100px;
+    border-radius: 5px;
+    border: none;
+}
+.addButton:hover{
+ background-color: rgb(59, 55, 94);
+}

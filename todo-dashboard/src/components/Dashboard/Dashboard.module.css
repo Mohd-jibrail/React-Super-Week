@@ -1,0 +1,25 @@
+.dashboardHeader{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(143, 130, 237);
+}
+.boardHeading{
+    height: 30px;
+    width: 200px;
+    padding: 3px;
+    background-color: antiquewhite;
+    border-radius: 5px;
+    border: none;
+}
+.delButton{
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(252, 6, 6);
+}
+.dashboard{
+    width: 100%;
+    height: auto;
+    border: 1px solid gray;
+}
