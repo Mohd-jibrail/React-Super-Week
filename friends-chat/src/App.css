@@ -1,0 +1,10 @@
+.App{
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   background-image: url('./images//background.png');
+   background-position: center;
+   background-size: cover;
+   align-items: center
+}
+

@@ -1,5 +1,6 @@
 import { useContext, useRef } from 'react';
 import style from './Header.module.css'
+import { FaAddressBook } from "react-icons/fa";
 import { TaskListContext } from '../../store/task-store'
 const Header=()=>{
   const {addTask} = useContext(TaskListContext);
@@ -30,7 +31,7 @@ const Header=()=>{
             <td><input placeholder="Assigned To..." className={style.inputField} ref={assignedTo} /></td>
             <td><input placeholder="Status..." className={style.inputField} ref={status}/></td>
             <td><input placeholder="Priority..." className={style.inputField} ref={priority}/></td>
-            <td><button className={style.addButton} onClick={submitTask}>Submit</button></td>
+            <td><button className={style.addButton} onClick={submitTask}><FaAddressBook/></button></td>
           </tr>
         </tbody>
       </table>

@@ -1,6 +1,9 @@
 import { useContext, useState } from 'react';
 import style from './DashboardItem.module.css'
 import { TaskListContext } from '../../store/task-store';
+import { FaEdit } from "react-icons/fa";
+import { RiDeleteBin3Fill } from "react-icons/ri";
+
 const DashboarItem=({task,assignedTo,status,priority})=>{
   const [assignedToValue,setAssignedTo] = useState(assignedTo);
   const [statusValue,setStatus] = useState(status);
@@ -37,8 +40,8 @@ const DashboarItem=({task,assignedTo,status,priority})=>{
             <td><input type='text' className={style.boardHeading} value={assignedToValue} onChange={setNewAssignedTo}></input></td>
             <td><input type='text' className={style.boardHeading} value={statusValue} onChange={setNewStatus}></input></td>
             <td><input type='text' className={style.boardHeading} value={priorityValue} onChange={setNewPriority}></input></td>
-            <td><button className={style.delButton} onClick={deleteTask}><b>Delete</b></button></td>
-            <td><button className={style.updateButton} onClick={updatingTask}><b>Update</b></button></td>
+            <td><button className={style.delButton} onClick={deleteTask}><b><RiDeleteBin3Fill/></b></button></td>
+            <td><button className={style.updateButton} onClick={updatingTask}><b><FaEdit/></b></button></td>
           </tr>
         </tbody>
       </table>

@@ -1,0 +1,9 @@
+.Footer{
+    width: 1530px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    bottom: 0;
+    background-color: rgb(200, 145, 62);
+}

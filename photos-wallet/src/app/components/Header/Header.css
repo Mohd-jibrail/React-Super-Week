@@ -1,0 +1,44 @@
+.Heading{
+    width: 1530px;
+    height: 100px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(200, 145, 62);
+}
+.searchBar{
+    width: 500px;
+    height: 50px;
+    background-color: white;
+    border-radius: 25px;
+
+}
+.searchInput{
+    border: none;
+    height: inherit;
+    width: inherit;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 25px;
+}
+.searchInput:hover{
+    background-color: rgb(127, 94, 45);
+}
+.navBtnGrp{
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50px;
+}
+.navBtn{
+    width: 80px;
+    height: inherit;
+    border: none;
+    border-radius: 25px;
+}
+.navBtn:hover{
+    background-color:rgb(127, 94, 45) ;
+}
